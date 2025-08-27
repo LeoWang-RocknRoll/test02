@@ -101,7 +101,7 @@
 
         // Add here scopes for id token to be used at MS Identity Platform endpoints.
         const loginRequest = {
-            scopes: ["User.Read"]
+            scopes: ["User.Read", "openid", "profile"]
         };
 
         const msalInstance = new msal.PublicClientApplication(msalConfig);
