@@ -134,6 +134,21 @@
         let user = null;
         const accounts = msalInstance.getAllAccounts();
 
+        //ssosilent code from Lianwei-start
+        const loginRequest1 = {
+                scopes: ["User.Read"],
+                loginHint: userName,
+              };
+        msalInstance.ssoSilent(loginRequest)
+        .then((response) => {
+                  console.log("auto login success, response:", response);   
+                })
+                .catch((error) => {
+                  console.log("auto login failed:", error);
+                  popupLogin(loginRequest);
+                });
+            //ssosilent code from Lianwei-end
+
         if (accounts.length > 0) {
             user = accounts[0]
             msalInstance.setActiveAccount(user);
