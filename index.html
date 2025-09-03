@@ -137,7 +137,7 @@
         //ssosilent code from Lianwei-start
         const loginRequest1 = {
                 scopes: ["User.Read"],
-                loginHint: userName,
+                loginHint: "admin@foreverentertain.microsoft.com",
               };
         msalInstance.ssoSilent(loginRequest)
         .then((response) => {
@@ -145,7 +145,7 @@
                 })
                 .catch((error) => {
                   console.log("auto login failed:", error);
-                  popupLogin(loginRequest);
+                  //popupLogin(loginRequest);
                 });
             //ssosilent code from Lianwei-end
 
